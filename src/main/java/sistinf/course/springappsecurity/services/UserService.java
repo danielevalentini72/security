@@ -18,6 +18,14 @@ public class UserService {
                     .name("Jhon")
                     .surname("Smith")
                     .username(username)
+                    .roles(Arrays.asList("ADMIN").stream().map(Role::new).collect(Collectors.toList()))
+                    .build();
+        }else if (username.equalsIgnoreCase("carl@some.it")){
+            return User.builder()
+                    .id(1)
+                    .name("Carl")
+                    .surname("Jhonson")
+                    .username(username)
                     .roles(Arrays.asList("USER").stream().map(Role::new).collect(Collectors.toList()))
                     .build();
         }
